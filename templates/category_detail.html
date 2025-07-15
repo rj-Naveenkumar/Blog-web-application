@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Posts in {{ category.name }} - My Blog{% endblock %}
+
+{% block content %}
+<h1>Posts in {{ category.name }}</h1>
+<ul>
+    {% for post in posts %}
+    <li>
+        <a href="{% url 'post_details' post.slug %}">{{ post.title }}</a>
+        <p>By {{ post.author.username }} on {{ post.created_on|date:"F j, Y" }}</p>
+        <p>{{ post.content|truncatewords:30 }}</p>
+    </li>
+    {% empty %}
+    <li>No posts in this category.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

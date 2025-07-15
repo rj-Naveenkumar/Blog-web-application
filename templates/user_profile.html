@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}User Profile - My Blog{% endblock %}
+
+{% block content %}
+<h1>User Profile</h1>
+<p>Username: {{ object.user.username }}</p>
+<p>Email: {{ object.user.email }}</p>
+<p>Bio: {{ object.bio }}</p>
+{% if object.avatar %}
+    <img src="{{ object.avatar.url }}" alt="Avatar" width="150" />
+{% else %}
+    <p>No avatar uploaded.</p>
+{% endif %}
+{% endblock %}
