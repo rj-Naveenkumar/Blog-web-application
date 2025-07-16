@@ -42,7 +42,7 @@
     {% if user.is_authenticated %}
     <form method="post" action="{% url 'bookmark_toggle' object.slug %}">
         {% csrf_token %}
-        {% if object.bookmarked_by.filter(user=user).exists %}
+        {% if is_bookmarked %}
         <button type="submit">Remove Bookmark</button>
         {% else %}
         <button type="submit">Bookmark</button>

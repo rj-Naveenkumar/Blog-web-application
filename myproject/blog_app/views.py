@@ -22,6 +22,16 @@ class PostDetail(DetailView):
     model = Post
     template_name = 'post_detail.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        post = self.get_object()
+        user = self.request.user
+        if user.is_authenticated:
+            context['is_bookmarked'] = post.bookmarked_by.filter(user=user).exists()
+        else:
+            context['is_bookmarked'] = False
+        return context
+
 
 class CategoryList(ListView):
     model = Category
@@ -88,7 +98,9 @@ class UserProfileView(generic.DetailView):
     template_name = 'user_profile.html'
 
     def get_object(self):
-        return get_object_or_404(UserProfile, user=self.request.user)
+        user = self.request.user
+        profile, created = UserProfile.objects.get_or_create(user=user)
+        return profile
 
 
 @method_decorator(login_required, name='dispatch')
