@@ -9,7 +9,11 @@
     <li>
         <a href="{% url 'post_details' post.slug %}">{{ post.title }}</a>
         <p>By {{ post.author.username }} on {{ post.created_on|date:"F j, Y" }}</p>
+        {% if post.category and post.category.slug %}
         <p>Category: <a href="{% url 'category_detail' post.category.slug %}">{{ post.category.name }}</a></p>
+        {% else %}
+        <p>Category: None</p>
+        {% endif %}
         <p>{{ post.content|truncatewords:30 }}</p>
     </li>
     {% empty %}

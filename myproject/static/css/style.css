@@ -1,0 +1,114 @@
+/* General styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: #008080; /* teal */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #b2dfdb; /* lighter teal */
+    text-decoration: underline;
+}
+
+/* Search form styles */
+header form {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+header form input[type="text"] {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    font-size: 1rem;
+    width: 200px;
+    transition: box-shadow 0.3s ease;
+}
+
+header form input[type="text"]:focus {
+    box-shadow: 0 0 5px #008080; /* teal */
+}
+
+header form button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #006666; /* darker teal */
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+header form button:hover {
+    background-color: #004d4d; /* darkest teal */
+}
+
+/* Main content styles */
+main {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 20px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Blog post list styles */
+main ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main ul li {
+    border: 1px solid #b2dfdb; /* light teal border */
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease;
+}
+
+main ul li:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Footer styles */
+footer {
+    background-color: #008080; /* teal */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    font-size: 0.9em;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
